@@ -75,9 +75,9 @@ title: Update Spreadsheet
         $sha = treeValue['sha'];
 
         //console.log($path + ' == ' + $writepath);
-
+        console.log($yaml_dump);
         if ($path == $writepath) {
-          repo.writemanual('master', $writepath, $yaml_dump, 'Save', $sha, function (err) { });
+          repo.writemanual($branch, $writepath, $yaml_dump, 'Save', $sha, function (err) { });
           console.log("writing " + $writepath);
           //alert("saved " + $writepath);
         }
