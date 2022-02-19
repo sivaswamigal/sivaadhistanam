@@ -1,2 +1,0 @@
-# sivaadhistanam
-Siva Adhistanam
