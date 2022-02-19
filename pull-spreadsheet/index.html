@@ -43,7 +43,7 @@ title: Update Spreadsheet
   $oAuthToken = Cookies.get('token');
 
   $(document).ready(function () {
-    Papa.parse(public_spreadsheet_url, {
+    Papa.parse($publicSpreadsheetUrl, {
       download: true,
       header: true,
       complete: showInfo
