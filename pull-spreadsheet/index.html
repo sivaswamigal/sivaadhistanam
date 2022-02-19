@@ -7,7 +7,7 @@ title: Update Spreadsheet
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/jquery-latest.min.js"></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/utility.js"></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/cookies.js"></script>
-<script type="text/javascript" src="https://hack-education-data.github.io/master/js/tabletop.js"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/js-yaml.min.js"></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/github.js"></script>
 
@@ -27,6 +27,9 @@ title: Update Spreadsheet
     var $repo = getUrlVar('repo');
     var $branch = getUrlVar('branch');
 
+    var $publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/'+$key+'/pubhtml';
+
+    console.log($publicSpreadsheetUrl);
     var $yaml_store = "";
 
     if($oAuthToken !='')
@@ -41,10 +44,10 @@ title: Update Spreadsheet
     $oAuthToken = Cookies.get('token');
 
     $(document).ready( function() {
-      Tabletop.init( { key: $key,
-                       callback: showInfo,
-                       wanted: [ $resource ],
-                       debug: true } )
+      Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } 
+                      )
     })
 
     console.log($resource);
