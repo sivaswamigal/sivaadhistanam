@@ -7,7 +7,7 @@ title: Update Spreadsheet
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/jquery-latest.min.js"></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/utility.js"></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/cookies.js"></script>
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>    
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/js-yaml.min.js"></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/github.js"></script>
 
@@ -44,10 +44,11 @@ title: Update Spreadsheet
     $oAuthToken = Cookies.get('token');
 
     $(document).ready( function() {
-      Tabletop.init( { key: $publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } 
-                      )
+      Papa.parse(public_spreadsheet_url, {
+         download: true,
+         header: true,
+         complete: showInfo
+       })
     })
 
     console.log($resource);
