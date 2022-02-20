@@ -4,3 +4,9 @@ integration_spreadsheet_key: 1nmY4Ft-muF3oPoLLP3c0kJT_bmo3VdF9oTU4TRwlZEY
 
 github_user: sivaswamigal
 github_repo: sivaadhistanam
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
