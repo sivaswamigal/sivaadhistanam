@@ -13,7 +13,5 @@ title: Siva Adhistanam Summary
 | Category  | Amount (Rupees) |
 | ------------- | ------------- |
 {% for s in summ %}
-<ul>
-<li><strong>| {{ s.Type }} |</strong> {{ s.Amount }} | </li>
-</ul>
+| {{ s.Type }} | {{ s.Amount }} |
 {% endfor %}
