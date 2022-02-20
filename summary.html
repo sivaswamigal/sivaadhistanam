@@ -10,11 +10,10 @@ title: Siva Adhistanam Summary
 
 <!-- Document -->
 
+| Category  | Amount (Rupees) |
+| ------------- | ------------- |
 {% for s in summ %}
-
 <ul>
-<li><strong>{{ s.Type }}</strong> ({{ s.Amount }})</li>
+<li><strong>| {{ s.Type }} |</strong> {{ s.Amount }} | </li>
 </ul>
-
 {% endfor %}
-
