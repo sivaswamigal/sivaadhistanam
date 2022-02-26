@@ -16,6 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
     
     <!-- Favicons -->
@@ -56,13 +57,19 @@
 
   <main>
     <h1>Siva Adhistanam</h1>
-     {% assign summ = site.data.summary %}
-     {% for s in summ %}
-     <ul>
-     <li><strong>{{ s.Type }}</strong>: ₹{{ s.Amount }}</li>
-     </ul>
-     {% endfor %}
-     
+
+    <script>
+        const yaml = require('js-yaml');
+        const fs   = require('fs');
+
+        // Get document, or throw exception on error
+        try {
+        const doc = yaml.load(fs.readFileSync('_data/summary.yaml', 'utf8'));
+        console.log(doc);
+        } catch (e) {
+        console.log(e);
+        }
+    </script>     
 
      <div>
         <canvas id="myChart"></canvas>
