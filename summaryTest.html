@@ -1,0 +1,17 @@
+---
+layout: default
+title: Siva Adhistanam Summary
+---
+
+<h2>Summary</h2>
+
+<!-- Organizations -->
+{% assign summ = site.data.summary %}
+
+<!-- Document -->
+
+{% for s in summ %}
+<ul>
+<li><strong>{{ s.Type }}</strong>: ₹{{ s.Amount }}</li>
+</ul>
+{% endfor %}
