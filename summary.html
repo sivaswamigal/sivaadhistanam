@@ -93,9 +93,15 @@
             };
             
             const config = {
-                type: 'line',
+                type: 'bar',
                 data: chartData,
-                options: {}
+                options: {
+                    scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                    }
+                },
             };
             const myChart = new Chart(
              document.getElementById('myChart'),
