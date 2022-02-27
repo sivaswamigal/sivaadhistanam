@@ -64,6 +64,15 @@
      <div>
         <canvas id="myChart"></canvas>
         <script>
+            $.get('_data/summary.yaml')
+            .done(function (data) {
+              console.log('File load complete');
+                yamlData=jsyaml.load(data);
+              console.log(yamlData[0]['Amount']);
+              var jsonString = JSON.stringify(yamlData);
+              console.log(jsonString);
+              console.log($.parseJSON(jsonString));
+          });
             console.log("inside summary");
             console.log(yamlData);
           const labels = [
