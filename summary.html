@@ -73,23 +73,22 @@
               console.log(jsonString);
               console.log($.parseJSON(jsonString));
               console.log("inside summary");
+            var labels=new Array();
+            var values=new Array();
+            yamlData.array.forEach(a => {
+                labels.push(a['Type']);
+                values.push(a['Amount']);
+            });
+
             console.log(yamlData); 
-                const labels = [
-                yamlData[0]['Type'],
-                'February',
-                'March',
-                'April',
-                'May',
-                'June',
-            ];
-            
+               
             const chartData = {
                 labels: labels,
                 datasets: [{
                 label: 'My First dataset',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [yamlData[0]['Amount'], 10, 5, 2, 20, 30, 45],
+                data: values,
                 }]
             };
             
