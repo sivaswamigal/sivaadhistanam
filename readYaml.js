@@ -4,9 +4,9 @@
             $.get('_data/summary.yaml')
             .done(function (data) {
               console.log('File load complete');
-                data=jsyaml.load(data);
-              console.log(data[0]['Amount']);
-              var jsonString = JSON.stringify(data);
+                yamlData=jsyaml.load(data);
+              console.log(yamlData[0]['Amount']);
+              var jsonString = JSON.stringify(yamlData);
               console.log(jsonString);
               console.log($.parseJSON(jsonString));
           });
