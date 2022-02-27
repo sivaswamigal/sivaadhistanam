@@ -1,10 +1,6 @@
-- Type: Funds required
-  Amount: '120000'
-- Type: Funds received
-  Amount: '20000'
+- Type: Contributions
+  Amount: '116916.623'
 - Type: Expenses
-  Amount: '5400'
-- Type: Remaining funds
-  Amount: '14600'
-- Type: Remaining requirement
-  Amount: '100000'
+  Amount: '88800'
+- Type: Balance
+  Amount: '28116.623'
